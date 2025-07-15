@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body.swal2-height-auto {
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+.board {
+    background-color: transparent;
+    width: 632px;
+    height: 700px;
+} 
+
+.tile {
+    background-color: blueviolet;
+    height: 200px;
+    width: 200px;
+    font-size: 45px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}

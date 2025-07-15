@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="vh-100 d-flex flex-column justify-content-center align-items-center">
+
+    <div class="board d-flex flex-wrap justify-content-center gap-3">
+        <button class="tile" id="t1"></button>
+        <button class="tile" id="t2"></button>
+        <button class="tile" id="t3"></button>
+        <button class="tile" id="t4"></button>
+        <button class="tile" id="t5"></button>
+        <button class="tile" id="t6"></button>
+        <button class="tile" id="t7"></button>
+        <button class="tile" id="t8"></button>
+        <button class="tile" id="t9"></button>
+        <button class="reset-btn btn btn-dark mt-2" id="reset-btn">Reset</button>
+    </div>
+    <h2 class="mt-4">Player X Won : <span id="scoreX" class="me-5"></span>Player O Won : <span id="scoreY"></span></h2>
+
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
