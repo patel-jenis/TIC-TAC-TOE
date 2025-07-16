@@ -1,0 +1,19 @@
+@media (max-width: 450px) {
+    .board {
+        width: 295px;
+        height: auto;
+    }
+
+    .tile {
+        height: 70px;
+        width: 70px;
+        font-size: 30px;
+    }
+
+    .score-board {
+        padding: 12px;
+    }
+    .score-board h5 {
+        font-size: 18px;
+    }
+}

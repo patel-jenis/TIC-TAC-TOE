@@ -2,8 +2,6 @@ let count = 0;
 let scoreX = 0;
 let scoreY = 0;
 
-
-
 document.getElementById("scoreX").innerHTML = "0";
 document.getElementById("scoreY").innerHTML = "0";
 
@@ -14,8 +12,8 @@ function resetAll(){
     count = 0;
     scoreX = 0;
     scoreY = 0;
-    document.getElementById("scoreX").innerHTML = "";
-    document.getElementById("scoreY").innerHTML = "";
+    document.getElementById("scoreX").innerHTML = "0";
+    document.getElementById("scoreY").innerHTML = "0";
 }
 
 function resetGame(){
@@ -159,7 +157,7 @@ function chechWin(sign){
 
     // checking Diagonal
     flag = true;
-    for(let i = 3; i <= 7; i+=4){
+    for(let i = 3; i <= 7; i+=2){
         let val = document.getElementById(`t${i}`).innerHTML;
 
         if(val != sign){

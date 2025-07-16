@@ -10,11 +10,23 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Media CSS -->
+    <link rel="stylesheet" href="./assets/css/media.css">
 </head>
 
 <body class="vh-100 d-flex flex-column justify-content-center align-items-center">
 
-    <div class="board d-flex flex-wrap justify-content-center gap-3">
+    <div class="score-board mb-4 d-flex align-items-center justify-content-center gap-4">
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <h5>Player X's Score :</h5>
+            <span id="scoreX"></span>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <h5>Player O's Score :</h5>
+            <span id="scoreY"></span>
+        </div>
+    </div>
+    <div class="board d-flex flex-wrap justify-content-center gap-3 mt-2">
         <button class="tile" id="t1"></button>
         <button class="tile" id="t2"></button>
         <button class="tile" id="t3"></button>
@@ -24,9 +36,8 @@
         <button class="tile" id="t7"></button>
         <button class="tile" id="t8"></button>
         <button class="tile" id="t9"></button>
-        <button class="reset-btn btn btn-dark mt-2" id="reset-btn">Reset</button>
     </div>
-    <h2 class="mt-4">Player X Won : <span id="scoreX" class="me-5"></span>Player O Won : <span id="scoreY"></span></h2>
+    <button class="reset-btn btn btn-dark mt-4" id="reset-btn">Reset Game</button>
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/script.js"></script>
