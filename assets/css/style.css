@@ -81,3 +81,8 @@ body.swal2-height-auto {
     color: red;
     font-size: 22px;
 }
+
+body.swal2-height-auto {
+    height: 100% !important;   /* Keep full height */
+    overflow: visible !important; /* Allow scrolling if needed */
+}

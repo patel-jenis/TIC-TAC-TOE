@@ -5,33 +5,39 @@ let scoreY = 0;
 document.getElementById("scoreX").innerHTML = "0";
 document.getElementById("scoreY").innerHTML = "0";
 
-function resetAll(){
-    for(let i = 1; i <= 9; i++){
+// function resetAll(){
+//     for(let i = 1; i <= 9; i++){
+//         document.getElementById(`t${i}`).innerHTML = "";
+//     }
+//     count = 0;
+//     scoreX = 0;
+//     scoreY = 0;
+//     document.getElementById("scoreX").innerHTML = "0";
+//     document.getElementById("scoreY").innerHTML = "0";
+// }
+
+function resetGame() {
+    for (let i = 1; i <= 9; i++) {
         document.getElementById(`t${i}`).innerHTML = "";
     }
     count = 0;
-    scoreX = 0;
-    scoreY = 0;
-    document.getElementById("scoreX").innerHTML = "0";
-    document.getElementById("scoreY").innerHTML = "0";
 }
 
-function resetGame(){
-    for(let i = 1; i <= 9; i++){
-        document.getElementById(`t${i}`).innerHTML = "";
-    }
-    count = 0;
-}
-
-function draw(){
-    Swal.fire("Match Draw");
+function draw() {
+    Swal.fire({
+        title: "Match Draw",
+        heightAuto: false
+    });
     resetGame();
 }
 
-function score(sign){
-    Swal.fire(`Player ${sign} Won`);
-    
-    if(sign === "X") {
+function score(sign) {
+    Swal.fire({
+        title: `Player ${sign} Won`,
+        heightAuto: false
+    });
+
+    if (sign === "X") {
         scoreX++;
         document.getElementById("scoreX").innerHTML = scoreX;
     } else {
@@ -41,132 +47,132 @@ function score(sign){
     resetGame();
 }
 
-function chechWin(sign){
+function chechWin(sign) {
     let flag = true;
-    
+
     // checking 1st row
-    for(let i = 1; i <= 3; i++){
+    for (let i = 1; i <= 3; i++) {
         let val = document.getElementById(`t${i}`).innerHTML;
 
-        if(val != sign){
+        if (val != sign) {
             flag = false;
             break;
         }
-    } 
+    }
 
-    if(flag){
+    if (flag) {
         score(sign);
         return true;
     }
 
     // checking 2st row
     flag = true;
-    for(let i = 4; i <= 6; i++){
+    for (let i = 4; i <= 6; i++) {
         let val = document.getElementById(`t${i}`).innerHTML;
 
-        if(val != sign){
+        if (val != sign) {
             flag = false;
             break;
         }
-    } 
+    }
 
-    if(flag){
+    if (flag) {
         score(sign);
         return true;
     }
 
     // checking 3st row
     flag = true;
-    for(let i = 7; i <= 9; i++){
+    for (let i = 7; i <= 9; i++) {
         let val = document.getElementById(`t${i}`).innerHTML;
 
-        if(val != sign){
+        if (val != sign) {
             flag = false;
             break;
         }
-    } 
+    }
 
-    if(flag){
+    if (flag) {
         score(sign);
         return true;
     }
 
     // checking 1st col
     flag = true;
-    for(let i = 1; i <= 7; i+=3){
+    for (let i = 1; i <= 7; i += 3) {
         let val = document.getElementById(`t${i}`).innerHTML;
 
-        if(val != sign){
+        if (val != sign) {
             flag = false;
             break;
         }
-    } 
+    }
 
-    if(flag){
+    if (flag) {
         score(sign);
         return true;
     }
 
     // checking 2st col
     flag = true;
-    for(let i = 2; i <= 8; i+=3){
+    for (let i = 2; i <= 8; i += 3) {
         let val = document.getElementById(`t${i}`).innerHTML;
 
-        if(val != sign){
+        if (val != sign) {
             flag = false;
             break;
         }
-    } 
+    }
 
-    if(flag){
+    if (flag) {
         score(sign);
         return true;
     }
 
     // checking 3st col
     flag = true;
-    for(let i = 3; i <= 9; i+=3){
+    for (let i = 3; i <= 9; i += 3) {
         let val = document.getElementById(`t${i}`).innerHTML;
 
-        if(val != sign){
+        if (val != sign) {
             flag = false;
             break;
         }
-    } 
+    }
 
-    if(flag){
+    if (flag) {
         score(sign);
         return true;
     }
 
     // checking Diagonal
     flag = true;
-    for(let i = 1; i <= 9; i+=4){
+    for (let i = 1; i <= 9; i += 4) {
         let val = document.getElementById(`t${i}`).innerHTML;
 
-        if(val != sign){
+        if (val != sign) {
             flag = false;
             break;
         }
-    } 
+    }
 
-    if(flag){
+    if (flag) {
         score(sign);
         return true;
     }
 
     // checking Diagonal
     flag = true;
-    for(let i = 3; i <= 7; i+=2){
+    for (let i = 3; i <= 7; i += 2) {
         let val = document.getElementById(`t${i}`).innerHTML;
 
-        if(val != sign){
+        if (val != sign) {
             flag = false;
             break;
         }
-    } 
+    }
 
-    if(flag){
+    if (flag) {
         score(sign);
         return true;
     }
@@ -180,7 +186,10 @@ $(document).ready(function () {
         let val = this;
 
         if (val.innerHTML != "") {
-            Swal.fire("You Cannot Overwrite Move");
+            Swal.fire({
+                title: "You Cannot Overwrite Move",
+                heightAuto: false
+            });
         } else {
             if (count % 2 == 0) {
                 val.innerHTML = "X";
@@ -192,16 +201,17 @@ $(document).ready(function () {
 
         let symbol = val.innerHTML;
 
-        if(count >= 5){
+        if (count >= 5) {
             let win = chechWin(symbol);
 
-            if(count === 9 && !win){
+            if (count === 9 && !win) {
                 draw();
             }
         }
     })
 
-    $(".reset-btn").on("click", function(){
-        resetAll();
+    $(".reset-btn").on("click", function () {
+        // resetAll();
+        resetGame();
     })
 })
